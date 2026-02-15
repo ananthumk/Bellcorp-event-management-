@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Login from './pages/login' 
+import Login from './pages/Login' 
 import Register from './pages/Register'
 import { Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/Dashboard'
