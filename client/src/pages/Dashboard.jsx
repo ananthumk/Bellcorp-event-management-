@@ -4,7 +4,7 @@ import { Calendar, CalendarCheck, Search } from 'lucide-react'
 import { TailSpin } from 'react-loader-spinner'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
-import EventCard from '../components/EventCard'
+import EventCard from '../components/eventCard'
 import EventPopup from '../components/EventPopup'
 
 const categories = [
