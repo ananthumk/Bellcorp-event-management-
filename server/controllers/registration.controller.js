@@ -12,7 +12,7 @@ const registerEvent = async(req, res) => {
         if(count >= event.capacity) return res.status(400).json({message: 'Event full! No slot available'})
 
         const registration = await Registration.create({
-            user: req.user._id,
+            user: req.userId,
             event: eventId
         })
 
@@ -25,7 +25,7 @@ const registerEvent = async(req, res) => {
 
 const getMyEvents = async(req, res) => {
     try {
-        const registrations = await Registration.find({ user: req.user._id }).populate("event")
+        const registrations = await Registration.find({ user: req.userId }).populate("event")
         res.status(200).json(registrations)
     } catch (error) {
         console.log('Get My events: ', error.message)

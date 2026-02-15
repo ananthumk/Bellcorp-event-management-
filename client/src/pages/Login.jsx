@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LoaderCircle } from 'lucide-react';
@@ -6,7 +6,7 @@ import axios from 'axios'
 import { AppContext } from '../context/AppContext';
 
 const Login = () => {
-  const { loginInfo, setLoginInfo } = useState({
+  const [loginInfo, setLoginInfo ] = useState({
     email: '',
     password: ''
   })
@@ -14,9 +14,15 @@ const Login = () => {
   const [processing, setProcessing] = useState(false)
   const [errMsg, setErrMsg] = useState(null)
 
-  const {url, setToken} = useContext(AppContext)
+  const {url, token, setToken} = useContext(AppContext)
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if(token){
+      navigate('/dashboard')
+    }
+  }, [])
 
   const handleChanges = (e) => {
     const { name, value } = e.target

@@ -61,7 +61,7 @@ const EventPopup = ({ event, setShowPopup }) => {
 
     return (
         <div className='w-full fixed inset-0 z-50 h-screen bg-[rgba(0,0,0,0.5)] flex justify-center items-center'>
-            <div className='bg-white w-[60%] rounded-md flex flex-col gap-2 py-5 px-7'>
+            <div className='bg-white w-[90%] md:w-[70%] lg:w-[60%] rounded-md flex flex-col gap-2 py-5 px-7'>
 
                 <button onClick={() => setShowPopup(false)} className='self-end cursor-pointer text-gray-500 hover:text-gray-700'><X className='w-5 h-5 text-gray inline' />
                 </button>

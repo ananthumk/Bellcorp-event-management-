@@ -4,7 +4,7 @@ import { Calendar, CalendarCheck, Search } from 'lucide-react'
 import { TailSpin } from 'react-loader-spinner'
 import axios from 'axios'
 import { AppContext } from '../context/AppContext'
-import EventCard from '../components/EventCard'
+import EventCard from '../components/eventCard'
 import EventPopup from '../components/EventPopup'
 
 const categories = [
@@ -92,11 +92,11 @@ const Dashboard = () => {
     <div className="relative">
       <Navbar />
       <div className='w-full h-[90vh] overflow-auto '>
-        <div className='w-[95%] mx-auto p-10 flex flex-col gap-5'>
+        <div className='w-[98%] md:w-[95%] mx-auto p-10 flex flex-col gap-5'>
           <h1 className='text-3xl my-2 font-sans font-bold'>Welcome to the Dashboard!</h1>
 
-          <div className='flex items-center gap-3'>
-            <div className='flex w-[60%] items-center gap-2 bg-transparent border-1 border-gray-500 rounded-md px-6'>
+          <div className='flex flex-col md:flex-row items-center gap-3'>
+            <div className='flex w-full md:w-[60%] items-center gap-2 bg-transparent border-1 border-gray-500 rounded-md px-6'>
               <Search className='w-5 h-5 mt-1 text-gray-600' />
               <input
                 type="search"
@@ -105,7 +105,7 @@ const Dashboard = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className='w-full bg-transparent font-medium py-2 px-1 border-0 outline-0 text-md text-gray-500' />
             </div>
-            <select onChange={(e) => setSelectedCategory(e.target.value)} className='w-[20%] py-2 px-3 outline-0 rounded-md border-1 border-gray-500 text-md font-medium text-black'>
+            <select onChange={(e) => setSelectedCategory(e.target.value)} className='w-full md:w-[20%] py-2 px-3 outline-0 rounded-md border-1 border-gray-500 text-md font-medium text-black'>
 
            
               {categories.map(category => (
@@ -114,7 +114,7 @@ const Dashboard = () => {
 
             </select>
 
-            <select onChange={(e) => setSelectedLocation(e.target.value)} className='w-[20%] py-2 px-3 outline-0 rounded-md border-1 border-gray-500 text-md font-medium text-black'>
+            <select onChange={(e) => setSelectedLocation(e.target.value)} className='w-full md:w-[20%] py-2 px-3 outline-0 rounded-md border-1 border-gray-500 text-md font-medium text-black'>
               <option value="" className='text-sm py-0.5 px-1.5'>All Location</option>
                 
                 {locations.map(location => (

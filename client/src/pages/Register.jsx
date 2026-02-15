@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { use, useContext, useEffect,  } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LoaderCircle } from 'lucide-react';
@@ -18,6 +18,16 @@ const Register = () => {
   const {url, setToken} = useContext(AppContext)
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = localStorage.getItem('token') || null
+    if(token){
+      setToken(token)
+      navigate('/dashboard')
+    } else {
+      setToken(null)
+    }   
+  }, [])
 
   const handleChanges = (e) => {
     const { name, value } = e.target
