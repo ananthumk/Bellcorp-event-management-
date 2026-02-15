@@ -10,7 +10,7 @@ const App = () => {
 
   
 
-  const url = 'http://localhost:5000/api'
+  const url = 'https://bellcorp-event-management-den5.onrender.com/api'
   return (
     <AppContext.Provider value={{
        url, token, setToken
